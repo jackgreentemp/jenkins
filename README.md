@@ -11,3 +11,7 @@
 ![](https://raw.githubusercontent.com/jackgreentemp/jenkins/master/Jenkins%E5%9C%A8mac%E7%94%B5%E8%84%91build%E4%B9%8B%E5%90%8E%E5%B0%86%E4%BB%A3%E7%A0%81%E9%83%A8%E7%BD%B2%E5%88%B0%E5%8F%A6%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BAlinux/%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86-%E7%B3%BB%E7%BB%9F%E8%AE%BE%E7%BD%AE-publish%20over%20ssh.png)
 3. 在Jenkins工程配置中，将build之后的文件通过ssh发送到服务器放置代码的目录
 ![](https://raw.githubusercontent.com/jackgreentemp/jenkins/master/Jenkins%E5%9C%A8mac%E7%94%B5%E8%84%91build%E4%B9%8B%E5%90%8E%E5%B0%86%E4%BB%A3%E7%A0%81%E9%83%A8%E7%BD%B2%E5%88%B0%E5%8F%A6%E4%B8%80%E5%8F%B0%E7%94%B5%E8%84%91%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BAlinux/%E5%B7%A5%E7%A8%8B%E9%85%8D%E7%BD%AE.png)
+
+这里注意：
+- Source files路径，是从工程的工作空间开始的，所有文件的通配符为"**"，所以使用build/**
+- Remote Directory，需要参考ssh配置中的Remote Directory,基于它再开始设置路径。在例子中，因为ssh配置中设置了Remote Directory为"/"，所以工程里的Remote Directory为"/home/user/download"
